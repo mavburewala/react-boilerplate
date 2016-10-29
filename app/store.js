@@ -5,11 +5,11 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
-import createSagaMiddleware from 'redux-saga';
+import createSagaMiddleware, { END } from 'redux-saga';
 import createReducer from './reducers';
 
 const sagaMiddleware = createSagaMiddleware();
-const devtools = window.devToolsExtension || (() => (noop) => noop);
+const devtools = typeof System === "undefined"? window.devToolsExtension || (() => (noop) => noop):null;
 
 export default function configureStore(initialState = {}, history) {
   // Create the store with two middlewares
@@ -48,5 +48,6 @@ export default function configureStore(initialState = {}, history) {
     });
   }
 
+  store.close = () => store.dispatch(END);
   return store;
 }

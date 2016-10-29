@@ -16,6 +16,14 @@ export default function createRoutes(store) {
   // create reusable async injectors using getAsyncInjectors factory
   const { injectReducer, injectSagas } = getAsyncInjectors(store);
 
+  if (typeof System === "undefined") {
+    const System = {
+      import: function(path) {
+        return Promise.resolve(require(path));
+      }
+    };
+  }
+
   return [
     {
       path: '/',
