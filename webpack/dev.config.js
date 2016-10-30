@@ -62,18 +62,14 @@ reactTransform[1].transforms.push({
   locals: ['module']
 });
 
-// PostCSS plugins
-const cssnext = require('postcss-cssnext');
-const postcssFocus = require('postcss-focus');
-const postcssReporter = require('postcss-reporter');
-
 module.exports = {
   devtool: 'inline-source-map',
   context: path.resolve(__dirname, '..'),
   entry: {
     'main': [
       'webpack-hot-middleware/client?path=http://' + host + ':' + port + '/__webpack_hmr',
-       'bootstrap-loader',
+      // 'bootstrap-loader',
+      // 'font-awesome-webpack!./app/theme/font-awesome.config.js',
       './app/client.js'
     ]
   },
@@ -87,22 +83,54 @@ module.exports = {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel?' + JSON.stringify(babelLoaderQuery), 'eslint-loader']},
       { test: /\.json$/, loader: 'json-loader' },
-      // { test: /\.css$/, loader: "style-loader!css-loader" },
+      // {
+      //   // Transform our own .css files with PostCSS and CSS-modules
+      //   test: /\.css$/,
+      //   exclude: /node_modules/,
+      //   loader: 'style-loader!css-loader?localIdentName=[local]____[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader',
+      // },
+      // , {
+      //   // Do not transform vendor's CSS with CSS-modules
+      //   // The point is that they remain in global scope.
+      //   // Since we require these CSS files in our JS or CSS files,
+      //   // they will be a part of our compilation either way.
+      //   // So, no need for ExtractTextPlugin here.
+      //   test: /\.css$/,
+      //   include: /node_modules/,
+      //   loaders: ['style-loader', 'css-loader'],
+      // },
+      // {
+      //   test: /\.css$/,
+      //   loaders: [
+      //     'style-loader',
+      //     {
+      //       loader: 'css-loader',
+      //       options: { importLoaders: 1 }
+      //     },
+      //     {
+      //       loader: 'postcss-loader',
+      //       options: {
+      //         plugins: function () {
+      //           return [
+      //             require('postcss-smart-import')({ /* ...options */ }),
+      //             require('precss')({ /* ...options */ }),
+      //             require('autoprefixer')({ /* ...options */ })
+      //           ];
+      //         }
+      //       }
+      //     }
+      //   ]
+      // },
       {
-        // Transform our own .css files with PostCSS and CSS-modules
         test: /\.css$/,
-        exclude: /node_modules/,
-        loader: 'isomorphic-style-loader!style-loader!css-loader?localIdentName=[local]__[path][name]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader',
-      }, {
-        // Do not transform vendor's CSS with CSS-modules
-        // The point is that they remain in global scope.
-        // Since we require these CSS files in our JS or CSS files,
-        // they will be a part of our compilation either way.
-        // So, no need for ExtractTextPlugin here.
-        test: /\.css$/,
-        include: /node_modules/,
-        loaders: ['style-loader', 'css-loader'],
+        loaders: [
+          'style-loader',
+          'css-loader?modules&importLoaders=1&sourceMap&localIdentName=[local]___[hash:base64:5]',
+          'postcss-loader'
+        ]
       },
+      // { test: /\.css/, loader: 'style!css?modules&importLoaders=1&sourceMap&localIdentName=[local]___[hash:base64:5]!css-loader!postcss-loader?outputStyle=expanded&sourceMap' },
+      // { test: /\.css/, loader: 'style!css?modules&importLoaders=1&sourceMap&localIdentName=[local]___[hash:base64:5]!postcss-loader!css-loader?outputStyle=expanded&sourceMap' },
       // { test: /\.less$/, loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!postcss-loader!less?outputStyle=expanded&sourceMap' },
       // { test: /\.scss$/, loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!postcss-loader!sass?outputStyle=expanded&sourceMap' },
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
@@ -113,15 +141,9 @@ module.exports = {
       { test: webpackIsomorphicToolsPlugin.regular_expression('images'), loader: 'url-loader?limit=10240' }
     ]
   },
-  postcss: () => [
-    postcssFocus(), // Add a :focus to every :hover
-    cssnext({ // Allow future CSS features to be used, also auto-prefixes the CSS...
-      browsers: ['last 2 versions', 'IE > 10'], // ...based on this browser list
-    }),
-    postcssReporter({ // Posts messages from plugins to the terminal
-      clearMessages: true,
-    }),
-  ],
+  postcss: function () {
+    return [precss, autoprefixer];
+  },
   progress: true,
   resolve: {
     modulesDirectories: [
@@ -140,6 +162,6 @@ module.exports = {
       __DEVELOPMENT__: true,
       __DEVTOOLS__: true  // <-------- DISABLE redux-devtools HERE
     }),
-    webpackIsomorphicToolsPlugin.development(),
+    webpackIsomorphicToolsPlugin.development()
   ]
 };

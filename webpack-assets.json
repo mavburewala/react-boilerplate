@@ -1,99 +1,94 @@
 {
   "javascript": {
-    "main": "http://localhost:3001/dist/main-c76d64314a869282f546.js"
+    "main": "http://localhost:3001/dist/main-fe93baaa10ca34db774d.js"
   },
   "styles": {},
   "assets": {
     "./app/containers/App/banner-metal.jpg": "http://localhost:3001/dist/7ed88ecba65877210015036ac001b02a.jpg",
-    "./~/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot": "http://localhost:3001/dist/f4769f9bdb7466be65088239c12046d1.eot",
-    "./~/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff": "http://localhost:3001/dist/fa2772327f55d8198301fdb8bcfc8158.woff",
-    "./~/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2": "http://localhost:3001/dist/448c34a56d699c29117adc64c43affeb.woff2",
-    "./~/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf": "http://localhost:3001/dist/e18bbf611f2a2e43afc071aa2f4e1512.ttf",
-    "./~/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg": "http://localhost:3001/dist/89889688147bd7575d6327160d64e760.svg",
     "./app/components/A/styles.css": {
-      "link": "link__app-components-A-styles__2gdiP",
-      "_style": ".link__app-components-A-styles__2gdiP {\n  color: #41ADDD;\n}\n\n.link__app-components-A-styles__2gdiP:hover, .link__app-components-A-styles__2gdiP:focus {\n  color: #6CC0E5;\n}\n"
+      "link": "link___2gdiP",
+      "_style": ".link___2gdiP {\n  color: #41ADDD;\n}\n\n.link___2gdiP:hover {\n  color: #6CC0E5;\n}\n"
     },
     "./app/components/Button/styles.css": {
-      "buttonWrapper": "buttonWrapper__app-components-Button-styles__3h30c",
-      "button": "button__app-components-Button-styles__3tez2",
-      "_style": ".buttonWrapper__app-components-Button-styles__3h30c {\n  width: 100%;\n  text-align: center;\n  margin: 4em 0;\n}\n\n.button__app-components-Button-styles__3tez2 {\n  display: inline-block;\n  box-sizing: border-box;\n  padding: 0.25em 2em;\n  margin: 0;\n  text-decoration: none;\n  border-radius: 4px;\n  -webkit-font-smoothing: antialiased;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  cursor: pointer;\n  outline: 0;\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: bold;\n  font-size: 16px;\n  border: 2px solid #41ADDD;\n  color: #41ADDD;\n}\n\n.button__app-components-Button-styles__3tez2:active {\n  background: #41ADDD;\n  color: #FFF;\n}\n"
+      "buttonWrapper": "buttonWrapper___3h30c",
+      "button": "button___3tez2",
+      "_style": ".buttonWrapper___3h30c {\n  width: 100%;\n  text-align: center;\n  margin: 4em 0;\n}\n\n.button___3tez2 {\n  display: inline-block;\n  box-sizing: border-box;\n  padding: 0.25em 2em;\n  margin: 0;\n  text-decoration: none;\n  border-radius: 4px;\n  -webkit-font-smoothing: antialiased;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  cursor: pointer;\n  outline: 0;\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: bold;\n  font-size: 16px;\n  border: 2px solid #41ADDD;\n  color: #41ADDD;\n}\n\n.button___3tez2:active {\n  background: #41ADDD;\n  color: #FFF;\n}\n"
     },
     "./app/components/Footer/styles.css": {
-      "footer": "footer__app-components-Footer-styles__12LGe",
-      "_style": ".footer__app-components-Footer-styles__12LGe {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: justify;\n      justify-content: space-between;\n  padding: 3em 0;\n  border-top: 1px solid #666;\n}\n"
+      "footer": "footer___12LGe",
+      "_style": ".footer___12LGe {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 3em 0;\n  border-top: 1px solid #666;\n}\n"
     },
     "./app/components/H1/styles.css": {
-      "heading1": "heading1__app-components-H1-styles__1w4pT",
-      "_style": ".heading1__app-components-H1-styles__1w4pT {\n  font-size: 2em;\n  margin-bottom: 0.25em;\n}\n"
+      "heading1": "heading1___1w4pT",
+      "_style": ".heading1___1w4pT {\n  font-size: 2em;\n  margin-bottom: 0.25em;\n}\n"
     },
     "./app/components/H2/styles.css": {
-      "heading2": "heading2__app-components-H2-styles__1fO3u",
-      "_style": ".heading2__app-components-H2-styles__1fO3u {\n  font-size: 1.5em;\n}\n"
+      "heading2": "heading2___1fO3u",
+      "_style": ".heading2___1fO3u {\n  font-size: 1.5em;\n}\n"
     },
     "./app/components/List/styles.css": {
-      "listWrapper": "listWrapper__app-components-List-styles__1pFb2",
-      "list": "list__app-components-List-styles__39l95",
-      "_style": "/* Gives the scrollbar rounded edges via overflow: hidden */\n.listWrapper__app-components-List-styles__1pFb2 {\n  padding: 0;\n  margin: 0;\n  width: 100%;\n  background-color: white;\n  border: 1px solid #CCC;\n  border-radius: 3px;\n  overflow: hidden;\n}\n\n.list__app-components-List-styles__39l95 {\n  list-style: none;\n  margin: 0;\n  width: 100%;\n  max-height: 30em;\n  overflow-y: auto;\n  padding: 0 1em;\n}\n"
+      "listWrapper": "listWrapper___1pFb2",
+      "list": "list___39l95",
+      "_style": "/* Gives the scrollbar rounded edges via overflow: hidden */\n.listWrapper___1pFb2 {\n  padding: 0;\n  margin: 0;\n  width: 100%;\n  background-color: white;\n  border: 1px solid #CCC;\n  border-radius: 3px;\n  overflow: hidden;\n}\n\n.list___39l95 {\n  list-style: none;\n  margin: 0;\n  width: 100%;\n  max-height: 30em;\n  overflow-y: auto;\n  padding: 0 1em;\n}\n"
     },
     "./app/components/ListItem/styles.css": {
-      "item": "item__app-components-ListItem-styles__3UHQA",
-      "itemContent": "itemContent__app-components-ListItem-styles__13v11",
-      "_style": ".item__app-components-ListItem-styles__3UHQA {\n  width: 100%;\n  height: 3em;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n      align-items: center;\n  position: relative;\n}\n\n.item__app-components-ListItem-styles__3UHQA + .item__app-components-ListItem-styles__3UHQA {\n  border-top: 1px solid #EEE;\n}\n\n.itemContent__app-components-ListItem-styles__13v11 {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: justify;\n      justify-content: space-between;\n  width: 100%;\n  height: 100%;\n  -ms-flex-align: center;\n      align-items: center;\n}\n"
+      "item": "item___3UHQA",
+      "itemContent": "itemContent___13v11",
+      "_style": ".item___3UHQA {\n  width: 100%;\n  height: 3em;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  position: relative;\n}\n\n.item___3UHQA + .item___3UHQA {\n  border-top: 1px solid #EEE;\n}\n\n.itemContent___13v11 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 100%;\n  height: 100%;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n"
     },
     "./app/components/LoadingIndicator/styles.css": {
-      "sk-fading-circle": "sk-fading-circle__app-components-LoadingIndicator-styles__3wGTU",
-      "skCircle": "skCircle__app-components-LoadingIndicator-styles__1Jky8",
-      "sk-circleFadeDelay": "sk-circleFadeDelay__app-components-LoadingIndicator-styles__251po",
-      "sk-circle2": "sk-circle2__app-components-LoadingIndicator-styles__2kkZ_ skCircle__app-components-LoadingIndicator-styles__1Jky8",
-      "sk-circle3": "sk-circle3__app-components-LoadingIndicator-styles__3f5sR skCircle__app-components-LoadingIndicator-styles__1Jky8",
-      "sk-circle4": "sk-circle4__app-components-LoadingIndicator-styles__see48 skCircle__app-components-LoadingIndicator-styles__1Jky8",
-      "sk-circle5": "sk-circle5__app-components-LoadingIndicator-styles__3GIPF skCircle__app-components-LoadingIndicator-styles__1Jky8",
-      "sk-circle6": "sk-circle6__app-components-LoadingIndicator-styles__3vNMR skCircle__app-components-LoadingIndicator-styles__1Jky8",
-      "sk-circle7": "sk-circle7__app-components-LoadingIndicator-styles__2Ehwq skCircle__app-components-LoadingIndicator-styles__1Jky8",
-      "sk-circle8": "sk-circle8__app-components-LoadingIndicator-styles__2BjnM skCircle__app-components-LoadingIndicator-styles__1Jky8",
-      "sk-circle9": "sk-circle9__app-components-LoadingIndicator-styles__10Bfe skCircle__app-components-LoadingIndicator-styles__1Jky8",
-      "sk-circle10": "sk-circle10__app-components-LoadingIndicator-styles__ZIIud skCircle__app-components-LoadingIndicator-styles__1Jky8",
-      "sk-circle11": "sk-circle11__app-components-LoadingIndicator-styles__e79Ig skCircle__app-components-LoadingIndicator-styles__1Jky8",
-      "sk-circle12": "sk-circle12__app-components-LoadingIndicator-styles__2KO0A skCircle__app-components-LoadingIndicator-styles__1Jky8",
-      "_style": ".sk-fading-circle__app-components-LoadingIndicator-styles__3wGTU {\n  margin: 2em auto;\n  width: 40px;\n  height: 40px;\n  position: relative;\n}\n\n.skCircle__app-components-LoadingIndicator-styles__1Jky8 {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n\n.skCircle__app-components-LoadingIndicator-styles__1Jky8::before {\n  content: '';\n  display: block;\n  margin: 0 auto;\n  width: 15%;\n  height: 15%;\n  background-color: #999;\n  border-radius: 100%;\n  animation: sk-circleFadeDelay__app-components-LoadingIndicator-styles__251po 1.2s infinite ease-in-out both;\n}\n\n.sk-circle2__app-components-LoadingIndicator-styles__2kkZ_ {\n  transform: rotate(30deg);\n}\n\n.sk-circle3__app-components-LoadingIndicator-styles__3f5sR {\n  transform: rotate(60deg);\n}\n\n.sk-circle4__app-components-LoadingIndicator-styles__see48 {\n  transform: rotate(90deg);\n}\n\n.sk-circle5__app-components-LoadingIndicator-styles__3GIPF {\n  transform: rotate(120deg);\n}\n\n.sk-circle6__app-components-LoadingIndicator-styles__3vNMR {\n  transform: rotate(150deg);\n}\n\n.sk-circle7__app-components-LoadingIndicator-styles__2Ehwq {\n  transform: rotate(180deg);\n}\n\n.sk-circle8__app-components-LoadingIndicator-styles__2BjnM {\n  transform: rotate(210deg);\n}\n\n.sk-circle9__app-components-LoadingIndicator-styles__10Bfe {\n  transform: rotate(240deg);\n}\n\n.sk-circle10__app-components-LoadingIndicator-styles__ZIIud {\n  transform: rotate(270deg);\n}\n\n.sk-circle11__app-components-LoadingIndicator-styles__e79Ig {\n  transform: rotate(300deg);\n}\n\n.sk-circle12__app-components-LoadingIndicator-styles__2KO0A {\n  transform: rotate(330deg);\n}\n\n.sk-circle2__app-components-LoadingIndicator-styles__2kkZ_::before {\n  animation-delay: -1.1s;\n}\n\n.sk-circle3__app-components-LoadingIndicator-styles__3f5sR::before {\n  animation-delay: -1s;\n}\n\n.sk-circle4__app-components-LoadingIndicator-styles__see48::before {\n  animation-delay: -0.9s;\n}\n\n.sk-circle5__app-components-LoadingIndicator-styles__3GIPF::before {\n  animation-delay: -0.8s;\n}\n\n.sk-circle6__app-components-LoadingIndicator-styles__3vNMR::before {\n  animation-delay: -0.7s;\n}\n\n.sk-circle7__app-components-LoadingIndicator-styles__2Ehwq::before {\n  animation-delay: -0.6s;\n}\n\n.sk-circle8__app-components-LoadingIndicator-styles__2BjnM::before {\n  animation-delay: -0.5s;\n}\n\n.sk-circle9__app-components-LoadingIndicator-styles__10Bfe::before {\n  animation-delay: -0.4s;\n}\n\n.sk-circle10__app-components-LoadingIndicator-styles__ZIIud::before {\n  animation-delay: -0.3s;\n}\n\n.sk-circle11__app-components-LoadingIndicator-styles__e79Ig::before {\n  animation-delay: -0.2s;\n}\n\n.sk-circle12__app-components-LoadingIndicator-styles__2KO0A::before {\n  animation-delay: -0.1s;\n}\n\n@keyframes sk-circleFadeDelay__app-components-LoadingIndicator-styles__251po {\n  0% {\n    opacity: 0;\n  }\n\n  39% {\n    opacity: 0;\n  }\n\n  40% {\n    opacity: 1;\n  }\n\n  100% {\n    opacity: 0;\n  }\n}\n"
+      "sk-fading-circle": "sk-fading-circle___3wGTU",
+      "skCircle": "skCircle___1Jky8",
+      "sk-circleFadeDelay": "sk-circleFadeDelay___251po",
+      "sk-circle2": "sk-circle2___2kkZ_ skCircle___1Jky8",
+      "sk-circle3": "sk-circle3___3f5sR skCircle___1Jky8",
+      "sk-circle4": "sk-circle4___see48 skCircle___1Jky8",
+      "sk-circle5": "sk-circle5___3GIPF skCircle___1Jky8",
+      "sk-circle6": "sk-circle6___3vNMR skCircle___1Jky8",
+      "sk-circle7": "sk-circle7___2Ehwq skCircle___1Jky8",
+      "sk-circle8": "sk-circle8___2BjnM skCircle___1Jky8",
+      "sk-circle9": "sk-circle9___10Bfe skCircle___1Jky8",
+      "sk-circle10": "sk-circle10___ZIIud skCircle___1Jky8",
+      "sk-circle11": "sk-circle11___e79Ig skCircle___1Jky8",
+      "sk-circle12": "sk-circle12___2KO0A skCircle___1Jky8",
+      "_style": ".sk-fading-circle___3wGTU {\n  margin: 2em auto;\n  width: 40px;\n  height: 40px;\n  position: relative;\n}\n\n.skCircle___1Jky8 {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n\n.skCircle___1Jky8::before {\n  content: '';\n  display: block;\n  margin: 0 auto;\n  width: 15%;\n  height: 15%;\n  background-color: #999;\n  border-radius: 100%;\n  -webkit-animation: sk-circleFadeDelay___251po 1.2s infinite ease-in-out both;\n          animation: sk-circleFadeDelay___251po 1.2s infinite ease-in-out both;\n}\n\n.sk-circle2___2kkZ_ {\n  -webkit-transform: rotate(30deg);\n          transform: rotate(30deg);\n}\n\n.sk-circle3___3f5sR {\n  -webkit-transform: rotate(60deg);\n          transform: rotate(60deg);\n}\n\n.sk-circle4___see48 {\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n\n.sk-circle5___3GIPF {\n  -webkit-transform: rotate(120deg);\n          transform: rotate(120deg);\n}\n\n.sk-circle6___3vNMR {\n  -webkit-transform: rotate(150deg);\n          transform: rotate(150deg);\n}\n\n.sk-circle7___2Ehwq {\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n\n.sk-circle8___2BjnM {\n  -webkit-transform: rotate(210deg);\n          transform: rotate(210deg);\n}\n\n.sk-circle9___10Bfe {\n  -webkit-transform: rotate(240deg);\n          transform: rotate(240deg);\n}\n\n.sk-circle10___ZIIud {\n  -webkit-transform: rotate(270deg);\n          transform: rotate(270deg);\n}\n\n.sk-circle11___e79Ig {\n  -webkit-transform: rotate(300deg);\n          transform: rotate(300deg);\n}\n\n.sk-circle12___2KO0A {\n  -webkit-transform: rotate(330deg);\n          transform: rotate(330deg);\n}\n\n.sk-circle2___2kkZ_::before {\n  -webkit-animation-delay: -1.1s;\n          animation-delay: -1.1s;\n}\n\n.sk-circle3___3f5sR::before {\n  -webkit-animation-delay: -1s;\n          animation-delay: -1s;\n}\n\n.sk-circle4___see48::before {\n  -webkit-animation-delay: -0.9s;\n          animation-delay: -0.9s;\n}\n\n.sk-circle5___3GIPF::before {\n  -webkit-animation-delay: -0.8s;\n          animation-delay: -0.8s;\n}\n\n.sk-circle6___3vNMR::before {\n  -webkit-animation-delay: -0.7s;\n          animation-delay: -0.7s;\n}\n\n.sk-circle7___2Ehwq::before {\n  -webkit-animation-delay: -0.6s;\n          animation-delay: -0.6s;\n}\n\n.sk-circle8___2BjnM::before {\n  -webkit-animation-delay: -0.5s;\n          animation-delay: -0.5s;\n}\n\n.sk-circle9___10Bfe::before {\n  -webkit-animation-delay: -0.4s;\n          animation-delay: -0.4s;\n}\n\n.sk-circle10___ZIIud::before {\n  -webkit-animation-delay: -0.3s;\n          animation-delay: -0.3s;\n}\n\n.sk-circle11___e79Ig::before {\n  -webkit-animation-delay: -0.2s;\n          animation-delay: -0.2s;\n}\n\n.sk-circle12___2KO0A::before {\n  -webkit-animation-delay: -0.1s;\n          animation-delay: -0.1s;\n}\n\n@-webkit-keyframes sk-circleFadeDelay___251po {\n  0% {\n    opacity: 0;\n  }\n\n  39% {\n    opacity: 0;\n  }\n\n  40% {\n    opacity: 1;\n  }\n\n  100% {\n    opacity: 0;\n  }\n}\n\n@keyframes sk-circleFadeDelay___251po {\n  0% {\n    opacity: 0;\n  }\n\n  39% {\n    opacity: 0;\n  }\n\n  40% {\n    opacity: 1;\n  }\n\n  100% {\n    opacity: 0;\n  }\n}\n"
     },
     "./app/components/Toggle/styles.css": {
-      "toggle": "toggle__app-components-Toggle-styles__2vpiT",
-      "_style": ".toggle__app-components-Toggle-styles__2vpiT {\n  line-height: 1em;\n  height: 20px;\n}\n"
+      "toggle": "toggle___2vpiT",
+      "_style": ".toggle___2vpiT {\n  line-height: 1em;\n  height: 20px;\n}\n"
     },
     "./app/containers/App/styles.css": {
-      "fontLoaded": "fontLoaded__app-containers-App-styles__6D0jB",
-      "wrapper": "wrapper__app-containers-App-styles__3EkNG",
-      "logoWrapper": "logoWrapper__app-containers-App-styles__J-qhm",
-      "logo": "logo__app-containers-App-styles__DZWtF",
-      "_style": "/* Global styles */\n\nhtml,\nbody {\n  height: 100%;\n  width: 100%;\n}\n\nbody {\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\nbody.fontLoaded__app-containers-App-styles__6D0jB {\n  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n#app {\n  background-color: #FAFAFA;\n  min-height: 100%;\n  min-width: 100%;\n}\n\n.wrapper__app-containers-App-styles__3EkNG {\n  max-width: 800px;\n  margin: 0 auto;\n  display: -ms-flexbox;\n  display: flex;\n  min-height: 100%;\n  padding: 0 16px;\n  -ms-flex-direction: column;\n      flex-direction: column;\n}\n\n.logoWrapper__app-containers-App-styles__J-qhm {\n  padding: 2em 0;\n}\n\n.logo__app-containers-App-styles__DZWtF {\n  width: 100%;\n  margin: 0 auto;\n  display: block;\n}\n"
+      "fontLoaded": "fontLoaded___6D0jB",
+      "wrapper": "wrapper___3EkNG",
+      "logoWrapper": "logoWrapper___J-qhm",
+      "logo": "logo___DZWtF",
+      "_style": "/* Global styles */\n\nhtml, body {\n  height: 100%;\n  width: 100%;\n}\n\nbody {\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\nbody.fontLoaded___6D0jB {\n  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n#app {\n  background-color: #FAFAFA;\n  min-height: 100%;\n  min-width: 100%;\n}\n\n.wrapper___3EkNG {\n  max-width: calc(768px + 16px * 2);\n  margin: 0 auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  min-height: 100%;\n  padding: 0 16px;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.logoWrapper___J-qhm {\n  padding: 2em 0;\n}\n\n.logo___DZWtF {\n  width: 100%;\n  margin: 0 auto;\n  display: block;\n}\n"
     },
     "./app/containers/FeaturePage/styles.css": {
-      "list": "list__app-containers-FeaturePage-styles__3TCD7",
-      "listItem": "listItem__app-containers-FeaturePage-styles__3910G",
-      "listItemTitle": "listItemTitle__app-containers-FeaturePage-styles__3qrRb",
-      "_style": ".list__app-containers-FeaturePage-styles__3TCD7 {\n  font-family: Georgia, Times, 'Times New Roman', serif;\n  padding-left: 1.75em;\n}\n\n.listItem__app-containers-FeaturePage-styles__3910G {\n  margin: 1em 0;\n}\n\n.listItemTitle__app-containers-FeaturePage-styles__3qrRb {\n  font-weight: bold;\n}\n"
+      "list": "list___3TCD7",
+      "listItem": "listItem___3910G",
+      "listItemTitle": "listItemTitle___3qrRb",
+      "_style": ".list___3TCD7 {\n  font-family: Georgia, Times, 'Times New Roman', serif;\n  padding-left: 1.75em;\n}\n\n.listItem___3910G {\n  margin: 1em 0;\n}\n\n.listItemTitle___3qrRb {\n  font-weight: bold;\n}\n"
     },
     "./app/containers/HomePage/styles.css": {
-      "textSection": "textSection__app-containers-HomePage-styles__btc2A",
-      "centered": "centered__app-containers-HomePage-styles__NunY2",
-      "link": "link__app-containers-HomePage-styles__2Hnne",
-      "usernameForm": "usernameForm__app-containers-HomePage-styles__LJteC",
-      "input": "input__app-containers-HomePage-styles__302s8",
-      "atPrefix": "atPrefix__app-containers-HomePage-styles__YpA5m",
-      "_style": ".textSection__app-containers-HomePage-styles__btc2A {\n  margin: 3em auto;\n}\n\n.textSection__app-containers-HomePage-styles__btc2A:first-child {\n  margin-top: 0;\n}\n\n.centered__app-containers-HomePage-styles__NunY2 {\n  text-align: center;\n}\n\np,\nlabel {\n  font-family: Georgia, Times, 'Times New Roman', serif;\n  line-height: 1.5em;\n}\n\n.link__app-containers-HomePage-styles__2Hnne {\n  text-decoration: none;\n}\n\n.usernameForm__app-containers-HomePage-styles__LJteC {\n  margin-bottom: 1em;\n}\n\n.input__app-containers-HomePage-styles__302s8 {\n  outline: none;\n  border-bottom: 1px dotted #999;\n}\n\n.atPrefix__app-containers-HomePage-styles__YpA5m {\n  color: black;\n  margin-left: 0.4em;\n}\n"
+      "textSection": "textSection___btc2A",
+      "centered": "centered___NunY2",
+      "link": "link___2Hnne",
+      "usernameForm": "usernameForm___LJteC",
+      "input": "input___302s8",
+      "atPrefix": "atPrefix___YpA5m",
+      "_style": ".textSection___btc2A {\n  margin: 3em auto;\n}\n\n.textSection___btc2A:first-child {\n  margin-top: 0;\n}\n\n.centered___NunY2 {\n  text-align: center;\n}\n\np, label {\n  font-family: Georgia, Times, 'Times New Roman', serif;\n  line-height: 1.5em;\n}\n\n.link___2Hnne {\n  text-decoration: none;\n}\n\n.usernameForm___LJteC {\n  margin-bottom: 1em;\n}\n\n.input___302s8 {\n  outline: none;\n  border-bottom: 1px dotted #999;\n}\n\n.atPrefix___YpA5m {\n  color: black;\n  margin-left: 0.4em;\n}\n"
     },
     "./app/containers/LocaleToggle/styles.css": {
-      "localeToggle": "localeToggle__app-containers-LocaleToggle-styles__2_O5E",
-      "_style": ".localeToggle__app-containers-LocaleToggle-styles__2_O5E {\n  padding: 2px;\n}\n"
+      "localeToggle": "localeToggle___2_O5E",
+      "_style": ".localeToggle___2_O5E {\n  padding: 2px;\n}\n"
     },
     "./app/containers/RepoListItem/styles.css": {
-      "linkWrapper": "linkWrapper__app-containers-RepoListItem-styles__3XDOE",
-      "linkRepo": "linkRepo__app-containers-RepoListItem-styles__XQEtZ",
-      "linkIssues": "linkIssues__app-containers-RepoListItem-styles__3gWek",
-      "issueIcon": "issueIcon__app-containers-RepoListItem-styles__3SlID",
-      "_style": ".linkWrapper__app-containers-RepoListItem-styles__3XDOE {\n  width: 100%;\n  height: 100%;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: space-between;\n      align-items: space-between;\n}\n\n.linkRepo__app-containers-RepoListItem-styles__XQEtZ {\n  height: 100%;\n  color: black;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n      align-items: center;\n  width: 100%;\n}\n\n.linkIssues__app-containers-RepoListItem-styles__3gWek {\n  color: black;\n  height: 100%;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n      align-items: center;\n  -ms-flex-pack: center;\n      justify-content: center;\n}\n\n.issueIcon__app-containers-RepoListItem-styles__3SlID {\n  fill: #CCC;\n  margin-right: 0.25em;\n}\n"
+      "linkWrapper": "linkWrapper___3XDOE",
+      "linkRepo": "linkRepo___XQEtZ",
+      "linkIssues": "linkIssues___3gWek",
+      "issueIcon": "issueIcon___3SlID",
+      "_style": ".linkWrapper___3XDOE {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: space-between;\n      -ms-flex-align: space-between;\n          align-items: space-between;\n}\n\n.linkRepo___XQEtZ {\n  height: 100%;\n  color: black;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n}\n\n.linkIssues___3gWek {\n  color: black;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\n.issueIcon___3SlID {\n  fill: #CCC;\n  margin-right: 0.25em;\n}\n"
     }
   }
 }
