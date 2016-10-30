@@ -25,19 +25,19 @@ const addDevMiddlewares = (app, webpackConfig) => {
     stats: 'errors-only',
   });
 
-  app.use(middleware);
-  app.use(webpackHotMiddleware(compiler));
+  //app.use(middleware);
+  //app.use(webpackHotMiddleware(compiler));
 
   // Since webpackDevMiddleware uses memory-fs internally to store build
   // artifacts, we use it instead
-  const fs = middleware.fileSystem;
-
-  if (pkg.dllPlugin) {
-    app.get(/\.dll\.js$/, (req, res) => {
-      const filename = req.path.replace(/^\//, '');
-      res.sendFile(path.join(process.cwd(), pkg.dllPlugin.path, filename));
-    });
-  }
+  // const fs = middleware.fileSystem;
+  //
+  // if (pkg.dllPlugin) {
+  //   app.get(/\.dll\.js$/, (req, res) => {
+  //     const filename = req.path.replace(/^\//, '');
+  //     res.sendFile(path.join(process.cwd(), pkg.dllPlugin.path, filename));
+  //   });
+  // }
 
   // app.get('*', (req, res) => {
   //   fs.readFile(path.join(compiler.outputPath, 'index.html'), (err, file) => {

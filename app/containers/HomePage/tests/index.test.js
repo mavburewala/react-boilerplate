@@ -11,9 +11,9 @@ import { HomePage, mapDispatchToProps } from '../index';
 import { changeUsername } from '../actions';
 import { loadRepos } from '../../App/actions';
 import { push } from 'react-router-redux';
-import RepoListItem from 'containers/RepoListItem';
-import List from 'components/List';
-import LoadingIndicator from 'components/LoadingIndicator';
+import RepoListItem from '../../containers/RepoListItem';
+import List from '../../components/List';
+import LoadingIndicator from '../../components/LoadingIndicator';
 
 describe('<HomePage />', () => {
   it('should render the loading indicator when its loading', () => {

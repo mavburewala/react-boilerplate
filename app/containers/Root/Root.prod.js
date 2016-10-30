@@ -1,7 +1,10 @@
+/* eslint-disable */
 // import has from 'lodash/has';
 import React, { Component, PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router, RouterContext, applyRouterMiddleware } from 'react-router';
+import LanguageProvider from '../../containers/LanguageProvider';
+import { useScroll } from 'react-router-scroll';
 // import GoogleAnalytics from 'react-ga';
 
 export default class Root extends Component {
@@ -45,6 +48,7 @@ Root.propTypes = {
   store: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired,
   routes: PropTypes.node.isRequired,
+  messages: PropTypes.object.isRequired,
   type: PropTypes.object,
-  renderProps: PropTypes.object
+  renderProps: PropTypes.object,
 };

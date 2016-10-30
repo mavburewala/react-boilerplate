@@ -15,7 +15,7 @@ function A({ ...props }) {
       className={className || styles.link}
       {...rest}
     >
-      { children }
+      {children}
     </a>
   );
 }

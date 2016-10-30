@@ -10,8 +10,8 @@ import { push } from 'react-router-redux';
 
 import messages from './messages';
 import { FormattedMessage } from 'react-intl';
-import Button from 'components/Button';
-import H1 from 'components/H1';
+import Button from '../../components/Button';
+import H1 from '../../components/H1';
 
 export function NotFound(props) {
   return (

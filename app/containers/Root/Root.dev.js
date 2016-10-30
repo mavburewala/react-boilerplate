@@ -2,6 +2,8 @@
 import React, { Component, PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router, RouterContext, applyRouterMiddleware } from 'react-router';
+import LanguageProvider from '../../containers/LanguageProvider';
+import { useScroll } from 'react-router-scroll';
 // import GoogleAnalytics from 'react-ga';
 
 export default class Root extends Component {
@@ -11,19 +13,19 @@ export default class Root extends Component {
   }
 
   onUpdate() {
-    const { store, type } = this.props;
+    const { type } = this.props;
+    // const { store, type } = this.props;
     if (type !== 'server') {
-      const state = store.getState();
+      // const state = store.getState();
       // if (has(state, 'router.pathname')) {
       //   GoogleAnalytics.pageview(state.router.pathname);
       // }
     }
   }
   render() {
-    const { store, history, routes, messages, type, renderProps } = this.props;
+    const { store, history, routes, type, renderProps } = this.props;
     return (
       <Provider store={store}>
-        <LanguageProvider messages={messages}>
         {type === 'server'
           ? <RouterContext {...renderProps} />
           : <Router
@@ -35,7 +37,6 @@ export default class Root extends Component {
               applyRouterMiddleware(useScroll())
             }
           />}
-        </LanguageProvider>
       </Provider>
     );
   }
@@ -46,5 +47,5 @@ Root.propTypes = {
   history: PropTypes.object.isRequired,
   routes: PropTypes.node.isRequired,
   type: PropTypes.string,
-  renderProps: PropTypes.object
+  renderProps: PropTypes.object,
 };

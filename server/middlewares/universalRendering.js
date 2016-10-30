@@ -20,13 +20,12 @@ import Root from '../../app/containers/Root/Root';
 // const webpackConfig = require('../../internals/webpack/webpack.server.babel');
 
 const addUniversalRenderingMiddleware = (app, options) => {
-    if (err) { throw err; }
+    //if (err) { throw err; }
     console.log('I am here');
     app.use((req, res) => {
       if (__DEVELOPMENT__) {
         webpackIsomorphicTools.refresh();
       }
-      console.log('git here');
       const memoryHistory = createMemoryHistory();
       const store = configureStore(memoryHistory);
       const allRoutes = {
@@ -34,8 +33,6 @@ const addUniversalRenderingMiddleware = (app, options) => {
         childRoutes: createRoutes(store),
       };
       const assets = webpackIsomorphicTools.assets();
-
-      console.log('assets: ', assets);
 
       function hydrateOnClient() {
         const htmlComponent = <Html assets={assets} store={store} />;
@@ -47,6 +44,8 @@ const addUniversalRenderingMiddleware = (app, options) => {
         hydrateOnClient();
         return;
       }
+
+      console.log("kuch");
 
       match({ routes: allRoutes, location: req.url }, (error, redirectLocation, renderProps) => {
         if (redirectLocation) {

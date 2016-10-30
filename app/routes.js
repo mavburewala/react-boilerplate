@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // These are the pages you can go to.
 // They are all wrapped in the App component, which should contain the navbar etc
 // See http://blog.mxstbr.com/2016/01/react-apps-with-pages for more information
@@ -15,14 +17,8 @@ const loadModule = (cb) => (componentModule) => {
 export default function createRoutes(store) {
   // create reusable async injectors using getAsyncInjectors factory
   const { injectReducer, injectSagas } = getAsyncInjectors(store);
-
-  if (typeof System === "undefined") {
-    const System = {
-      import: function(path) {
-        return Promise.resolve(require(path));
-      }
-    };
-  }
+  
+  console.log("System: ", System);
 
   return [
     {
@@ -30,9 +26,9 @@ export default function createRoutes(store) {
       name: 'home',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          System.import('containers/HomePage/reducer'),
-          System.import('containers/HomePage/sagas'),
-          System.import('containers/HomePage'),
+          System.import('./containers/HomePage/reducer'),
+          System.import('./containers/HomePage/sagas'),
+          System.import('./containers/HomePage'),
         ]);
 
         const renderRoute = loadModule(cb);
@@ -50,7 +46,7 @@ export default function createRoutes(store) {
       path: '/features',
       name: 'features',
       getComponent(nextState, cb) {
-        System.import('containers/FeaturePage')
+        System.import('./containers/FeaturePage')
           .then(loadModule(cb))
           .catch(errorLoading);
       },
@@ -58,7 +54,7 @@ export default function createRoutes(store) {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
-        System.import('containers/NotFoundPage')
+        System.import('./containers/NotFoundPage')
           .then(loadModule(cb))
           .catch(errorLoading);
       },

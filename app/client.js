@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Needed for redux-saga es6 generator support
 import 'babel-polyfill';
 
@@ -11,11 +12,10 @@ import 'file?name=[name].[ext]!./.htaccess';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import GoogleAnalytics from 'react-ga';
+// import GoogleAnalytics from 'react-ga';
 import _ from 'lodash';
 import { getStoredState, createPersistor } from 'redux-persist';
 
-import { Provider } from 'react-redux';
 
 import Root from './containers/Root/Root';
 // import rootSaga from './modules/rootSaga';
@@ -24,22 +24,19 @@ import Root from './containers/Root/Root';
 
 
 // Import all the third party stuff
-import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import FontFaceObserver from 'fontfaceobserver';
-import { useScroll } from 'react-router-scroll';
 import configureStore from './store';
 
-// Import Language Provider
-import LanguageProvider from 'containers/LanguageProvider';
 
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
-import styles from 'containers/App/styles.css';
+import styles from './containers/App/styles.css';
 const openSansObserver = new FontFaceObserver('Open Sans', {});
 
 // When Open Sans is loaded, add a font-family using Open Sans to the body
-!!document && openSansObserver.load().then(() => {
+openSansObserver.load().then(() => {
   document.body.classList.add(styles.fontLoaded);
 }, () => {
   document.body.classList.remove(styles.fontLoaded);
@@ -83,13 +80,13 @@ if (window.devToolsExtension) {
 // Sync history and store, as the react-router-redux reducer
 // is under the non-default key ("routing"), selectLocationState
 // must be provided for resolving how to retrieve the "route" in the state
-import { selectLocationState } from 'containers/App/selectors';
+import { selectLocationState } from './containers/App/selectors';
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: selectLocationState(),
 });
 
 // Set up the router, wrapping all Routes in the App component
-import App from 'containers/App';
+import App from './containers/App';
 import createRoutes from './routes';
 const rootRoute = {
   component: App,
