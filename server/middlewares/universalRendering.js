@@ -37,7 +37,7 @@ const addUniversalRenderingMiddleware = (app, options) => {
         webpackIsomorphicTools.refresh();
       }
       const memoryHistory = createMemoryHistory();
-      const store = configureStore(memoryHistory);
+      const store = configureStore({}, memoryHistory);
       const allRoutes = {
         component: App,
         childRoutes: createRoutes(store),
