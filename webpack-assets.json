@@ -1,10 +1,10 @@
 {
   "javascript": {
-    "main": "/main.js"
+    "main": "http://localhost:3001/dist/main-6ebc3212544eaeffd115.js"
   },
   "styles": {},
   "assets": {
-    "./app/containers/App/banner-metal.jpg": "/f3b26cc54fe4588671576d6b115a2a1d.jpg",
+    "./app/containers/App/banner-metal.jpg": "http://localhost:3001/dist/7ed88ecba65877210015036ac001b02a.jpg",
     "./app/components/A/styles.css": {
       "link": "link__app-components-A-styles__2gdiP",
       "_style": ".link__app-components-A-styles__2gdiP {\n  color: #41ADDD;\n}\n\n.link__app-components-A-styles__2gdiP:hover, .link__app-components-A-styles__2gdiP:focus {\n  color: #6CC0E5;\n}\n"

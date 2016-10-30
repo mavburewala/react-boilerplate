@@ -16,11 +16,21 @@ import createRoutes from '../../app/routes';
 import { waitAll } from '../helpers/sagas';
 import Root from '../../app/containers/Root/Root';
 
+// require("babel-polyfill");
+
 // const webpack = require('webpack');
 // const webpackConfig = require('../../internals/webpack/webpack.server.babel');
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
 
+
+
+var foo = async (function() {
+  return System.import('intl');
+})
 const addUniversalRenderingMiddleware = (app, options) => {
-    //if (err) { throw err; }
+
+
     console.log('I am here');
     app.use((req, res) => {
       if (__DEVELOPMENT__) {
@@ -45,12 +55,14 @@ const addUniversalRenderingMiddleware = (app, options) => {
         return;
       }
 
-      console.log("kuch");
+      console.log("Here", allRoutes);
 
       match({ routes: allRoutes, location: req.url }, (error, redirectLocation, renderProps) => {
+        console.log("RenderProps: ", renderProps);
         if (redirectLocation) {
           res.redirect(redirectLocation.pathname + redirectLocation.search);
         } else if (error) {
+          console.log("error: ", error);
           console.error('ROUTER ERROR:', pretty.render(error));
           res.status(500);
           hydrateOnClient();
@@ -62,7 +74,7 @@ const addUniversalRenderingMiddleware = (app, options) => {
             renderProps={renderProps}
             type="server"
           />);
-
+          console.log("gotcha");
           const preloaders = renderProps.components
           .filter((component) => component && component.preload)
           .map((component) => component.preload(renderProps.params, req))

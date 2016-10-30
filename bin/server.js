@@ -12,7 +12,7 @@ global.__DEVELOPMENT__ = process.env.NODE_ENV !== 'production';
 console.log("ho");
 // https://github.com/halt-hammerzeit/webpack-isomorphic-tools
 var WebpackIsomorphicTools = require('webpack-isomorphic-tools');
-global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('../internals/webpack/webpack.isomorphic.tools'))
+global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('../webpack/webpack-isomorphic-tools.js'))
   .server(rootDir, function() {
     require('../server/index');
   });

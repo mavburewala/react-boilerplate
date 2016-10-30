@@ -6,7 +6,8 @@
     "add-module-exports",
     "transform-decorators-legacy",
     "transform-react-display-name",
-    "system-import-transformer"
+    "system-import-transformer",
+    "transform-async-generator-functions"
   ],
 
   "env": {

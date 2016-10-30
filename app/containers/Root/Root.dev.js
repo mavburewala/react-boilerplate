@@ -23,20 +23,28 @@ export default class Root extends Component {
     }
   }
   render() {
-    const { store, history, routes, type, renderProps } = this.props;
+    let { store, history, routes, messages, type, renderProps } = this.props;
+    if(!messages){
+      messages = {
+        de : require('../../translations/de.json'),
+        en :  require('../../translations/en.json'),
+      }
+    }
     return (
       <Provider store={store}>
-        {type === 'server'
-          ? <RouterContext {...renderProps} />
-          : <Router
-            history={history}
-            routes={routes}
-            render={
-              // Scroll to top when going to a new page, imitating default browser
-              // behaviour
-              applyRouterMiddleware(useScroll())
-            }
-          />}
+        <LanguageProvider messages={messages}>
+          {type === 'server'
+            ? <RouterContext {...renderProps} />
+            : <Router
+              history={history}
+              routes={routes}
+              render={
+                // Scroll to top when going to a new page, imitating default browser
+                // behaviour
+                applyRouterMiddleware(useScroll())
+              }
+            />}
+          </LanguageProvider>
       </Provider>
     );
   }
