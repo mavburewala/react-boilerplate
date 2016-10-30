@@ -5,6 +5,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 
+const Webpack_isomorphic_tools_plugin = require('webpack-isomorphic-tools/plugin')
+
+const webpack_isomorphic_tools_plugin =
+  // webpack-isomorphic-tools settings reside in a separate .js file
+  // (because they will be used in the web server code too).
+  new Webpack_isomorphic_tools_plugin(require('./webpack.isomorphic.tools'))
+  // also enter development mode since it's a development webpack configuration
+  // (see below for explanation)
+  .development();
+
 module.exports = require('./webpack.base.babel')({
   // In production, we skip all hot-reloading stuff
   entry: [
@@ -25,6 +35,7 @@ module.exports = require('./webpack.base.babel')({
   }),
 
   plugins: [
+    webpack_isomorphic_tools_plugin,
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       children: true,

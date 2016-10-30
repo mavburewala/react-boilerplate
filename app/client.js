@@ -8,6 +8,7 @@ import '!file?name=[name].[ext]!./manifest.json';
 import 'file?name=[name].[ext]!./.htaccess';
 /* eslint-enable import/no-unresolved */
 
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import GoogleAnalytics from 'react-ga';
@@ -17,7 +18,7 @@ import { getStoredState, createPersistor } from 'redux-persist';
 import { Provider } from 'react-redux';
 
 import Root from './containers/Root/Root';
-import rootSaga from './modules/rootSaga';
+// import rootSaga from './modules/rootSaga';
 // import config from './config';
 // GoogleAnalytics.initialize(config.app.googleAnalytics.appId);
 
@@ -57,10 +58,10 @@ const persistConfig = {
 
 };
 
-
 let initialState = window.__data; // eslint-disable-line
+
 try {
-  const restoredState = await getStoredState(persistConfig);
+  const restoredState = null; // await getStoredState(persistConfig);
   initialState = _.merge({}, initialState, restoredState);
 } catch (error) {
   console.log('error restoring state:', error);

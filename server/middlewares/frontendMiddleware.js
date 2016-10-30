@@ -2,7 +2,14 @@
 const express = require('express');
 const path = require('path');
 const compression = require('compression');
-const pkg = require(path.resolve(process.cwd(), 'package.json'));
+// const pkg = require(path.resolve(process.cwd(), 'package.json'));
+
+function readJSON(path) {
+  return JSON.parse(require('fs').readFileSync(path).toString());
+}
+/* eslint-enable */
+
+const pkg = readJSON(path.resolve(process.cwd(), 'package.json'));
 const addUniversalRenderingMiddleware = require('./universalRendering');
 
 // Dev middleware
@@ -41,7 +48,7 @@ const addDevMiddlewares = (app, webpackConfig) => {
   //     }
   //   });
   // });
-  addUniversalRenderingMiddleware(app);
+   addUniversalRenderingMiddleware(app);
 };
 
 // Production middlewares
