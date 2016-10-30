@@ -20,7 +20,7 @@ class Html extends Component {
     const content = component ? ReactDOM.renderToStaticMarkup(component) : '';
     const head = Helmet.rewind();
 
-    console.log(Object.keys(assets.assets));
+    // console.log(Object.keys(assets.assets));
     return (
       <html lang="en-us">
         <head>
@@ -33,6 +33,16 @@ class Html extends Component {
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+          {/* <style>
+          {Object.keys(assets.assets).map((key) => {
+            console.log(assets.assets[key]);
+            if(String(key).endsWith('.css')){
+              return assets.assets[key]._style;
+            }
+          }
+            // key.endsWith('.css') && style._style
+          )}
+          </style> */}
           {/* styles (will be present only in production with webpack extract text plugin) */}
           {Object.keys(assets.styles).map((style, key) =>
             <link href={assets.styles[style]} key={key} media="screen, projection" rel="stylesheet" type="text/css" charSet="UTF-8" />

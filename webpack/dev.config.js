@@ -73,7 +73,7 @@ module.exports = {
   entry: {
     'main': [
       'webpack-hot-middleware/client?path=http://' + host + ':' + port + '/__webpack_hmr',
-      // 'bootstrap-loader',
+       'bootstrap-loader',
       './app/client.js'
     ]
   },

@@ -1,10 +1,15 @@
 {
   "javascript": {
-    "main": "http://localhost:3001/dist/main-165b4299509a4bbbcc78.js"
+    "main": "http://localhost:3001/dist/main-c76d64314a869282f546.js"
   },
   "styles": {},
   "assets": {
     "./app/containers/App/banner-metal.jpg": "http://localhost:3001/dist/7ed88ecba65877210015036ac001b02a.jpg",
+    "./~/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot": "http://localhost:3001/dist/f4769f9bdb7466be65088239c12046d1.eot",
+    "./~/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff": "http://localhost:3001/dist/fa2772327f55d8198301fdb8bcfc8158.woff",
+    "./~/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2": "http://localhost:3001/dist/448c34a56d699c29117adc64c43affeb.woff2",
+    "./~/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf": "http://localhost:3001/dist/e18bbf611f2a2e43afc071aa2f4e1512.ttf",
+    "./~/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg": "http://localhost:3001/dist/89889688147bd7575d6327160d64e760.svg",
     "./app/components/A/styles.css": {
       "link": "link__app-components-A-styles__2gdiP",
       "_style": ".link__app-components-A-styles__2gdiP {\n  color: #41ADDD;\n}\n\n.link__app-components-A-styles__2gdiP:hover, .link__app-components-A-styles__2gdiP:focus {\n  color: #6CC0E5;\n}\n"

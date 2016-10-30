@@ -11,6 +11,7 @@ import Helmet from 'react-helmet';
 
 import messages from './messages';
 import { createStructuredSelector } from 'reselect';
+import { Link } from 'react-router'
 
 import {
   selectRepos,
@@ -118,6 +119,7 @@ export class HomePage extends React.Component {
             </form>
             {mainContent}
           </section>
+          <Link to={`/features`}>Nadeem</Link>
           <Button handleRoute={this.openFeaturesPage}>
             <FormattedMessage {...messages.featuresButton} />
           </Button>

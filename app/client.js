@@ -61,19 +61,7 @@ async function renderClient(messages) {
     whitelist: ['home']
   };
 
-
-  const test = async function() {
-    await 1;
-  };
-
-  (async function() {
-    await test();
-    console.log("Yey, story successfully loaded!");
-  }());
-
-  // await test();
-
-  let initialState = window.__data; // eslint-disable-line
+  let initialState =  {};// window.__data; // eslint-disable-line
 
   try {
     const restoredState = await getStoredState(persistConfig);
@@ -110,8 +98,6 @@ async function renderClient(messages) {
     component: App,
     childRoutes: createRoutes(store),
   };
-
-  console.log("store: ", store);
 
   ReactDOM.render(
     <Root store={store} history={history} routes={rootRoute} messages={messages} />,
