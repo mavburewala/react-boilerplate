@@ -25,11 +25,14 @@ export default function configureStore(initialState = {}, history) {
     //devtools(),
   ];
 
+  console.log("initialState: ", initialState);
   const store = createStore(
     createReducer(),
     fromJS(initialState),
     compose(...enhancers)
   );
+
+  console.log("Store: ", store);
 
   // Extensions
   store.runSaga = sagaMiddleware.run;

@@ -43,6 +43,8 @@ openSansObserver.load().then(() => {
 // Import i18n messages
 import { translationMessages } from './i18n';
 
+// import { history } from './utils/history';
+
 // Create redux store with history
 // this uses the singleton browserHistory provided by react-router
 // Optionally, this could be changed to leverage a created history
@@ -63,6 +65,8 @@ if (window.devToolsExtension) {
 // is under the non-default key ("routing"), selectLocationState
 // must be provided for resolving how to retrieve the "route" in the state
 import { selectLocationState } from './containers/App/selectors';
+
+console.log("selectLocationState: ",selectLocationState);
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: selectLocationState(),
 });

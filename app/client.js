@@ -29,6 +29,8 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import FontFaceObserver from 'fontfaceobserver';
 import configureStore from './store';
 
+import { selectLocationState } from './containers/App/selectors';
+
 
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
@@ -50,51 +52,67 @@ import { translationMessages } from './i18n';
 // Optionally, this could be changed to leverage a created history
 // e.g. `const browserHistory = useRouterHistory(createBrowserHistory)();`
 // const initialState = {};
-
-const persistConfig = {
-
-};
-
-let initialState = window.__data; // eslint-disable-line
-
-try {
-  const restoredState = null; // await getStoredState(persistConfig);
-  initialState = _.merge({}, initialState, restoredState);
-} catch (error) {
-  console.log('error restoring state:', error);
-}
-const store = configureStore(initialState, browserHistory);
-
-const dest = document.getElementById('content');
-const persistor = createPersistor(store, persistConfig); // eslint-disable-line
-
-// If you use Redux devTools extension, since v2.0.1, they added an
-// `updateStore`, so any enhancers that change the store object
-// could be used with the devTools' store.
-// As this boilerplate uses Redux & Redux-Saga, the `updateStore` is needed
-// if you want to `take` actions in your Sagas, dispatched from devTools.
-if (window.devToolsExtension) {
-  window.devToolsExtension.updateStore(store);
-}
-
-// Sync history and store, as the react-router-redux reducer
-// is under the non-default key ("routing"), selectLocationState
-// must be provided for resolving how to retrieve the "route" in the state
-import { selectLocationState } from './containers/App/selectors';
-const history = syncHistoryWithStore(browserHistory, store, {
-  selectLocationState: selectLocationState(),
-});
-
-// Set up the router, wrapping all Routes in the App component
 import App from './containers/App';
 import createRoutes from './routes';
-const rootRoute = {
-  component: App,
-  childRoutes: createRoutes(store),
-};
 
 
 async function renderClient(messages) {
+  const persistConfig = {
+    whitelist: ['home']
+  };
+
+
+  const test = async function() {
+    await 1;
+  };
+
+  (async function() {
+    await test();
+    console.log("Yey, story successfully loaded!");
+  }());
+
+  // await test();
+
+  let initialState = window.__data; // eslint-disable-line
+
+  try {
+    const restoredState = await getStoredState(persistConfig);
+    initialState = _.merge({}, initialState, restoredState);
+    console.log("My intial state: ", initialState);
+  } catch (error) {
+    console.log('error restoring state:', error);
+  }
+  const store = configureStore(initialState, browserHistory);
+
+  const dest = document.getElementById('content');
+  const persistor = createPersistor(store, persistConfig); // eslint-disable-line
+
+  // If you use Redux devTools extension, since v2.0.1, they added an
+  // `updateStore`, so any enhancers that change the store object
+  // could be used with the devTools' store.
+  // As this boilerplate uses Redux & Redux-Saga, the `updateStore` is needed
+  // if you want to `take` actions in your Sagas, dispatched from devTools.
+  // if (window.devToolsExtension) {
+  //   window.devToolsExtension.updateStore(store);
+  // }
+
+  // Sync history and store, as the react-router-redux reducer
+  // is under the non-default key ("routing"), selectLocationState
+  // must be provided for resolving how to retrieve the "route" in the state
+
+  const history = syncHistoryWithStore(browserHistory, store, {
+    selectLocationState: selectLocationState(),
+  });
+
+  // Set up the router, wrapping all Routes in the App component
+
+  const rootRoute = {
+    component: App,
+    childRoutes: createRoutes(store),
+  };
+
+  console.log("store: ", store);
+
   ReactDOM.render(
     <Root store={store} history={history} routes={rootRoute} messages={messages} />,
     dest

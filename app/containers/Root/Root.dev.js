@@ -53,7 +53,7 @@ export default class Root extends Component {
 Root.propTypes = {
   store: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired,
-  routes: PropTypes.node.isRequired,
+  routes: PropTypes.object.isRequired,
   type: PropTypes.string,
   renderProps: PropTypes.object,
 };

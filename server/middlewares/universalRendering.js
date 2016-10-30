@@ -16,6 +16,10 @@ import createRoutes from '../../app/routes';
 import { waitAll } from '../helpers/sagas';
 import Root from '../../app/containers/Root/Root';
 
+import { syncHistoryWithStore } from 'react-router-redux';
+
+import { selectLocationState } from '../../app/containers/App/selectors';
+
 // require("babel-polyfill");
 
 // const webpack = require('webpack');
@@ -30,14 +34,13 @@ var foo = async (function() {
 })
 const addUniversalRenderingMiddleware = (app, options) => {
 
-
-    console.log('I am here');
     app.use((req, res) => {
       if (__DEVELOPMENT__) {
         webpackIsomorphicTools.refresh();
       }
       const memoryHistory = createMemoryHistory();
       const store = configureStore({}, memoryHistory);
+
       const allRoutes = {
         component: App,
         childRoutes: createRoutes(store),
@@ -55,31 +58,31 @@ const addUniversalRenderingMiddleware = (app, options) => {
         return;
       }
 
-      console.log("Here", allRoutes);
-
       match({ routes: allRoutes, location: req.url }, (error, redirectLocation, renderProps) => {
-        console.log("RenderProps: ", renderProps);
         if (redirectLocation) {
           res.redirect(redirectLocation.pathname + redirectLocation.search);
         } else if (error) {
-          console.log("error: ", error);
           console.error('ROUTER ERROR:', pretty.render(error));
           res.status(500);
           hydrateOnClient();
         } else if (renderProps) {
+          const history = syncHistoryWithStore(memoryHistory, store, {
+            selectLocationState: selectLocationState(),
+          });
+
           const rootComponent = (<Root
             store={store}
             routes={allRoutes}
-            history={memoryHistory}
+            history={history}
             renderProps={renderProps}
             type="server"
           />);
-          console.log("gotcha");
           const preloaders = renderProps.components
           .filter((component) => component && component.preload)
           .map((component) => component.preload(renderProps.params, req))
           .reduce((result, preloader) => result.concat(preloader), []);
 
+          // console.log("PreLoaders: ", preloaders);
           store.runSaga(waitAll(preloaders)).done.then(() => {
             global.navigator = { userAgent: req.headers['user-agent'] };
 

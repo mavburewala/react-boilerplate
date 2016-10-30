@@ -20,6 +20,7 @@ class Html extends Component {
     const content = component ? ReactDOM.renderToStaticMarkup(component) : '';
     const head = Helmet.rewind();
 
+    console.log(Object.keys(assets.assets));
     return (
       <html lang="en-us">
         <head>
