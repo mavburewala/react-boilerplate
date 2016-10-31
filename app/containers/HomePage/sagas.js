@@ -14,13 +14,15 @@ import { selectUsername } from '../../containers/HomePage/selectors';
 /**
  * Github repos request/response handler
  */
-export function* getRepos() {
+export function* getRepos(username) {
+  console.log("making it:", username);
   // Select username from store
-  const username = yield select(selectUsername());
   const requestURL = `https://api.github.com/users/${username}/repos?type=all&sort=updated`;
 
   // Call our request helper (see 'utils/request')
   const repos = yield call(request, requestURL);
+
+  console.log("I am here: ", repos);
 
   if (!repos.err) {
     yield put(reposLoaded(repos.data, username));
@@ -34,7 +36,8 @@ export function* getRepos() {
  * By using `takeLatest` only the result of the latest API call is applied.
  */
 export function* getReposWatcher() {
-  yield fork(takeLatest, LOAD_REPOS, getRepos);
+  const username = yield select(selectUsername());
+  yield fork(takeLatest, LOAD_REPOS, getRepos, username);
 }
 
 /**
@@ -51,5 +54,6 @@ export function* githubData() {
 
 // Bootstrap sagas
 export default [
+  getRepos,
   githubData,
 ];

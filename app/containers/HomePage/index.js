@@ -11,16 +11,21 @@ import Helmet from 'react-helmet';
 
 import messages from './messages';
 import { createStructuredSelector } from 'reselect';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
+
+import { getRepos } from './sagas';
 
 import {
   selectRepos,
   selectLoading,
   selectError,
+  selectLocationState,
 } from '../../containers/App/selectors';
 
 import {
+  selectHome,
   selectUsername,
+  currentLogin
 } from './selectors';
 
 import { changeUsername } from './actions';
@@ -34,9 +39,17 @@ import List from '../../components/List';
 import ListItem from '../../components/ListItem';
 import LoadingIndicator from '../../components/LoadingIndicator';
 
+
 import styles from './styles.css';
 
 export class HomePage extends React.Component {
+
+  componentWillMount(){
+    console.log('login: ', this.props.login);
+    if(this.props.login){
+      this.props.onChangeUsername(this.props.login);
+    }
+  }
   /**
    * when initial state username is not null, submit the form to load repos
    */
@@ -113,7 +126,7 @@ export class HomePage extends React.Component {
                   type="text"
                   placeholder="mxstbr"
                   value={this.props.username}
-                  onChange={this.props.onChangeUsername}
+                  onChange={(e) => this.props.onChangeUsername(e.target.value)}
                 />
               </label>
             </form>
@@ -129,9 +142,18 @@ export class HomePage extends React.Component {
   }
 }
 
+function preload({ username }) {
+  return [
+    [getRepos]
+  ];
+}
+
+HomePage.preload = preload;
+
 HomePage.propTypes = {
   changeRoute: React.PropTypes.func,
   loading: React.PropTypes.bool,
+  login: React.PropTypes.string,
   error: React.PropTypes.oneOfType([
     React.PropTypes.object,
     React.PropTypes.bool,
@@ -147,7 +169,7 @@ HomePage.propTypes = {
 
 export function mapDispatchToProps(dispatch) {
   return {
-    onChangeUsername: (evt) => dispatch(changeUsername(evt.target.value)),
+    onChangeUsername: (username) => dispatch(changeUsername(username)),
     changeRoute: (url) => dispatch(push(url)),
     onSubmitForm: (evt) => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
@@ -157,12 +179,21 @@ export function mapDispatchToProps(dispatch) {
     dispatch,
   };
 }
-
+// const mapStateToProps = (state) => {
+//   return {
+//     repos: selectRepos(state),
+//     username: selectUsername(state),
+//     loading: selectLoading(state),
+//     error: selectError(state),
+//     //location : selectLocationState(),
+//   }
+// }
 const mapStateToProps = createStructuredSelector({
   repos: selectRepos(),
   username: selectUsername(),
   loading: selectLoading(),
   error: selectError(),
+  login : currentLogin(),
 });
 
 // Wrap the component to inject dispatch and state into it
