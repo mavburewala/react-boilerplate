@@ -35,7 +35,7 @@
       "jsx"
     ],
     "moduleDirectories": [
-      "src",
+      "app",
       "node_modules"
     ]
   },
@@ -44,7 +44,8 @@
       "command": "node ./bin/server.js",
       "env": {
         "NODE_PATH": "./server",
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
+        "PORT": 3000
       }
     },
     "start-dev": {

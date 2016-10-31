@@ -123,10 +123,11 @@ module.exports = {
       // },
       {
         test: /\.css$/,
+        // loader: 'style!css?importLoaders=1&sourceMap&localIdentName=[local]___[hash:base64:5]!postcss-loader?outputStyle=expanded&sourceMap'
         loaders: [
           'style-loader',
           'css-loader?modules&importLoaders=1&sourceMap&localIdentName=[local]___[hash:base64:5]',
-          'postcss-loader'
+          'postcss-loader?outputStyle=expanded&sourceMap'
         ]
       },
       // { test: /\.css/, loader: 'style!css?modules&importLoaders=1&sourceMap&localIdentName=[local]___[hash:base64:5]!css-loader!postcss-loader?outputStyle=expanded&sourceMap' },

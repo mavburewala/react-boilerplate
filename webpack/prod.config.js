@@ -17,7 +17,7 @@ module.exports = {
   entry: {
     'main': [
       // 'bootstrap-loader',
-      // 'font-awesome-webpack!./app/theme/font-awesome.config.prod.js',
+      // 'font-awesome-webpack!./src/theme/font-awesome.config.prod.js',
       './app/client.js'
     ]
   },
@@ -31,7 +31,7 @@ module.exports = {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: [strip.loader('debug'), 'babel']},
       { test: /\.json$/, loader: 'json-loader' },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader')},
+      { test: /\.css/, loader: ExtractTextPlugin.extract({fallbackLoader: 'style', loader: 'css?modules&importLoaders=2&sourceMap!postcss-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true'}) },
       // { test: /\.less$/, loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=2&sourceMap!postcss-loader!less?outputStyle=expanded&sourceMap=true&sourceMapContents=true') },
       // { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=2&sourceMap!postcss-loader!sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true') },
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
@@ -54,7 +54,7 @@ module.exports = {
     new CleanPlugin([assetsPath], { root: projectRootPath }),
 
     // css files from the extract-text-plugin loader
-    new ExtractTextPlugin('[name]-[chunkhash].css', {allChunks: true}),
+    new ExtractTextPlugin({filename: '[name]-[chunkhash].css', allChunks: true}),
     new webpack.DefinePlugin({
       'process.env': {
         "NODE_ENV" : '"production"',
@@ -71,7 +71,7 @@ module.exports = {
 
     // optimizations
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false

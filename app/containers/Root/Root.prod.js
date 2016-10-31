@@ -23,7 +23,13 @@ export default class Root extends Component {
     }
   }
   render() {
-    const { store, history, routes, messages, type, renderProps } = this.props;
+    let { store, history, routes, messages, type, renderProps } = this.props;
+    if(!messages){
+      messages = {
+        de : require('../../translations/de.json'),
+        en :  require('../../translations/en.json'),
+      }
+    }
     return (
       <Provider store={store}>
         <LanguageProvider messages={messages}>
