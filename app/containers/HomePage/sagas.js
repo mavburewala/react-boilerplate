@@ -29,7 +29,6 @@ export function* getRepos(username) {
   if (!repos.err) {
     yield put(reposLoaded(repos.data, username));
   } else {
-    console.log("I got error: ", repos.err);
     yield put(repoLoadingError(repos.err));
   }
 }

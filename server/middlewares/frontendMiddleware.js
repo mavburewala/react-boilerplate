@@ -14,16 +14,16 @@ const addUniversalRenderingMiddleware = require('./universalRendering');
 
 // Dev middleware
 const addDevMiddlewares = (app, webpackConfig) => {
-  const webpack = require('webpack');
-  const webpackDevMiddleware = require('webpack-dev-middleware');
-  const webpackHotMiddleware = require('webpack-hot-middleware');
-  const compiler = webpack(webpackConfig);
-  const middleware = webpackDevMiddleware(compiler, {
-    noInfo: true,
-    publicPath: webpackConfig.output.publicPath,
-    silent: true,
-    stats: 'errors-only',
-  });
+  // const webpack = require('webpack');
+  // const webpackDevMiddleware = require('webpack-dev-middleware');
+  // const webpackHotMiddleware = require('webpack-hot-middleware');
+  // const compiler = webpack(webpackConfig);
+  // const middleware = webpackDevMiddleware(compiler, {
+  //   noInfo: true,
+  //   publicPath: webpackConfig.output.publicPath,
+  //   silent: true,
+  //   stats: 'errors-only',
+  // });
 
   //app.use(middleware);
   //app.use(webpackHotMiddleware(compiler));
@@ -75,8 +75,8 @@ module.exports = (app, options) => {
   if (isProd) {
     addProdMiddlewares(app, options);
   } else {
-    const webpackConfig = require('../../internals/webpack/webpack.dev.babel');
-    addDevMiddlewares(app, webpackConfig);
+    //const webpackConfig = require('../../internals/webpack/webpack.dev.babel');
+    addDevMiddlewares(app);
   }
 
   return app;
