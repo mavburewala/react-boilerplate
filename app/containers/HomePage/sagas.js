@@ -38,7 +38,8 @@ export function* getRepos(username) {
  * By using `takeLatest` only the result of the latest API call is applied.
  */
 export function* getReposWatcher() {
-  const { username } = yield take(LOAD_REPOS);
+  const { username } = yield takeLatest(LOAD_REPOS);
+  console.log("Found: ", username);
   yield fork(getRepos, username);
   //yield fork(takeLatest, LOAD_REPOS, getRepos, username);
 }

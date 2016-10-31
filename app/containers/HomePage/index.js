@@ -141,11 +141,13 @@ export class HomePage extends React.Component {
   }
 }
 
-function preload(state) {
-
-  console.log("H3re username: ", state);
+function preload({login}) {
+  if(!login){
+    return [
+    ];
+  }
   return [
-    [getRepos, state.login]
+    [getRepos, login]
   ];
 }
 
