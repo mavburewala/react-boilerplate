@@ -77,12 +77,13 @@ const addUniversalRenderingMiddleware = (app, options) => {
             renderProps={renderProps}
             type="server"
           />);
+          console.log("renderProps.params: ", renderProps.params);
           const preloaders = renderProps.components
           .filter((component) => component && component.preload)
           .map((component) => component.preload(renderProps.params, req))
           .reduce((result, preloader) => result.concat(preloader), []);
 
-          // console.log("PreLoaders: ", preloaders);
+           console.log("PreLoaders: ", preloaders);
           store.runSaga(waitAll(preloaders)).done.then(() => {
             global.navigator = { userAgent: req.headers['user-agent'] };
 

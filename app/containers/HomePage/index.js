@@ -55,7 +55,7 @@ export class HomePage extends React.Component {
    */
   componentDidMount() {
     if (this.props.username && this.props.username.trim().length > 0) {
-      this.props.onSubmitForm();
+      this.props.onSubmitForm(this.props.username);
     }
   }
   /**
@@ -132,7 +132,6 @@ export class HomePage extends React.Component {
             </form>
             {mainContent}
           </section>
-          <Link to={`/features`}>Nadeem</Link>
           <Button handleRoute={this.openFeaturesPage}>
             <FormattedMessage {...messages.featuresButton} />
           </Button>
@@ -142,9 +141,11 @@ export class HomePage extends React.Component {
   }
 }
 
-function preload({ username }) {
+function preload(state) {
+
+  console.log("H3re username: ", state);
   return [
-    [getRepos]
+    [getRepos, state.login]
   ];
 }
 
@@ -171,9 +172,8 @@ export function mapDispatchToProps(dispatch) {
   return {
     onChangeUsername: (username) => dispatch(changeUsername(username)),
     changeRoute: (url) => dispatch(push(url)),
-    onSubmitForm: (evt) => {
-      if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      dispatch(loadRepos());
+    onSubmitForm: (username) => {
+      dispatch(loadRepos(username));
     },
 
     dispatch,

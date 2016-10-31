@@ -1,26 +1,49 @@
 {
   "javascript": {
-    "main": "http://localhost:3001/dist/main-6f006de560bff3cb83f6.js"
+    "main": "http://localhost:3001/dist/main-129ca264fda476017ef7.js"
   },
   "styles": {},
   "assets": {
     "./app/containers/App/banner-metal.jpg": "http://localhost:3001/dist/7ed88ecba65877210015036ac001b02a.jpg",
+    "./app/containers/App/styles.css": {
+      "fontLoaded": "fontLoaded___6D0jB",
+      "wrapper": "wrapper___3EkNG",
+      "logoWrapper": "logoWrapper___J-qhm",
+      "logo": "logo___DZWtF",
+      "_style": "/* Global styles */\n\nhtml, body {\n  height: 100%;\n  width: 100%;\n}\n\nbody {\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\nbody.fontLoaded___6D0jB {\n  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n#app {\n  background-color: #FAFAFA;\n  min-height: 100%;\n  min-width: 100%;\n}\n\n.wrapper___3EkNG {\n  max-width: calc(768px + 16px * 2);\n  margin: 0 auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  min-height: 100%;\n  padding: 0 16px;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.logoWrapper___J-qhm {\n  padding: 2em 0;\n}\n\n.logo___DZWtF {\n  width: 100%;\n  margin: 0 auto;\n  display: block;\n}\n"
+    },
     "./app/components/A/styles.css": {
       "link": "link___2gdiP",
       "_style": ".link___2gdiP {\n  color: #41ADDD;\n}\n\n.link___2gdiP:hover {\n  color: #6CC0E5;\n}\n"
-    },
-    "./app/components/Button/styles.css": {
-      "buttonWrapper": "buttonWrapper___3h30c",
-      "button": "button___3tez2",
-      "_style": ".buttonWrapper___3h30c {\n  width: 100%;\n  text-align: center;\n  margin: 4em 0;\n}\n\n.button___3tez2 {\n  display: inline-block;\n  box-sizing: border-box;\n  padding: 0.25em 2em;\n  margin: 0;\n  text-decoration: none;\n  border-radius: 4px;\n  -webkit-font-smoothing: antialiased;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  cursor: pointer;\n  outline: 0;\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: bold;\n  font-size: 16px;\n  border: 2px solid #41ADDD;\n  color: #41ADDD;\n}\n\n.button___3tez2:active {\n  background: #41ADDD;\n  color: #FFF;\n}\n"
     },
     "./app/components/Footer/styles.css": {
       "footer": "footer___12LGe",
       "_style": ".footer___12LGe {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 3em 0;\n  border-top: 1px solid #666;\n}\n"
     },
-    "./app/components/H1/styles.css": {
-      "heading1": "heading1___1w4pT",
-      "_style": ".heading1___1w4pT {\n  font-size: 2em;\n  margin-bottom: 0.25em;\n}\n"
+    "./app/containers/LocaleToggle/styles.css": {
+      "localeToggle": "localeToggle___2_O5E",
+      "_style": ".localeToggle___2_O5E {\n  padding: 2px;\n}\n"
+    },
+    "./app/components/Toggle/styles.css": {
+      "toggle": "toggle___2vpiT",
+      "_style": ".toggle___2vpiT {\n  line-height: 1em;\n  height: 20px;\n}\n"
+    },
+    "./app/components/ListItem/styles.css": {
+      "item": "item___3UHQA",
+      "itemContent": "itemContent___13v11",
+      "_style": ".item___3UHQA {\n  width: 100%;\n  height: 3em;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  position: relative;\n}\n\n.item___3UHQA + .item___3UHQA {\n  border-top: 1px solid #EEE;\n}\n\n.itemContent___13v11 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 100%;\n  height: 100%;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n"
+    },
+    "./app/containers/RepoListItem/styles.css": {
+      "linkWrapper": "linkWrapper___3XDOE",
+      "linkRepo": "linkRepo___XQEtZ",
+      "linkIssues": "linkIssues___3gWek",
+      "issueIcon": "issueIcon___3SlID",
+      "_style": ".linkWrapper___3XDOE {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: space-between;\n      -ms-flex-align: space-between;\n          align-items: space-between;\n}\n\n.linkRepo___XQEtZ {\n  height: 100%;\n  color: black;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n}\n\n.linkIssues___3gWek {\n  color: black;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\n.issueIcon___3SlID {\n  fill: #CCC;\n  margin-right: 0.25em;\n}\n"
+    },
+    "./app/components/Button/styles.css": {
+      "buttonWrapper": "buttonWrapper___3h30c",
+      "button": "button___3tez2",
+      "_style": ".buttonWrapper___3h30c {\n  width: 100%;\n  text-align: center;\n  margin: 4em 0;\n}\n\n.button___3tez2 {\n  display: inline-block;\n  box-sizing: border-box;\n  padding: 0.25em 2em;\n  margin: 0;\n  text-decoration: none;\n  border-radius: 4px;\n  -webkit-font-smoothing: antialiased;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  cursor: pointer;\n  outline: 0;\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: bold;\n  font-size: 16px;\n  border: 2px solid #41ADDD;\n  color: #41ADDD;\n}\n\n.button___3tez2:active {\n  background: #41ADDD;\n  color: #FFF;\n}\n"
     },
     "./app/components/H2/styles.css": {
       "heading2": "heading2___1fO3u",
@@ -30,11 +53,6 @@
       "listWrapper": "listWrapper___1pFb2",
       "list": "list___39l95",
       "_style": "/* Gives the scrollbar rounded edges via overflow: hidden */\n.listWrapper___1pFb2 {\n  padding: 0;\n  margin: 0;\n  width: 100%;\n  background-color: white;\n  border: 1px solid #CCC;\n  border-radius: 3px;\n  overflow: hidden;\n}\n\n.list___39l95 {\n  list-style: none;\n  margin: 0;\n  width: 100%;\n  max-height: 30em;\n  overflow-y: auto;\n  padding: 0 1em;\n}\n"
-    },
-    "./app/components/ListItem/styles.css": {
-      "item": "item___3UHQA",
-      "itemContent": "itemContent___13v11",
-      "_style": ".item___3UHQA {\n  width: 100%;\n  height: 3em;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  position: relative;\n}\n\n.item___3UHQA + .item___3UHQA {\n  border-top: 1px solid #EEE;\n}\n\n.itemContent___13v11 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 100%;\n  height: 100%;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n"
     },
     "./app/components/LoadingIndicator/styles.css": {
       "sk-fading-circle": "sk-fading-circle___3wGTU",
@@ -53,23 +71,6 @@
       "sk-circle12": "sk-circle12___2KO0A skCircle___1Jky8",
       "_style": ".sk-fading-circle___3wGTU {\n  margin: 2em auto;\n  width: 40px;\n  height: 40px;\n  position: relative;\n}\n\n.skCircle___1Jky8 {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n\n.skCircle___1Jky8::before {\n  content: '';\n  display: block;\n  margin: 0 auto;\n  width: 15%;\n  height: 15%;\n  background-color: #999;\n  border-radius: 100%;\n  -webkit-animation: sk-circleFadeDelay___251po 1.2s infinite ease-in-out both;\n          animation: sk-circleFadeDelay___251po 1.2s infinite ease-in-out both;\n}\n\n.sk-circle2___2kkZ_ {\n  -webkit-transform: rotate(30deg);\n          transform: rotate(30deg);\n}\n\n.sk-circle3___3f5sR {\n  -webkit-transform: rotate(60deg);\n          transform: rotate(60deg);\n}\n\n.sk-circle4___see48 {\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n\n.sk-circle5___3GIPF {\n  -webkit-transform: rotate(120deg);\n          transform: rotate(120deg);\n}\n\n.sk-circle6___3vNMR {\n  -webkit-transform: rotate(150deg);\n          transform: rotate(150deg);\n}\n\n.sk-circle7___2Ehwq {\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n\n.sk-circle8___2BjnM {\n  -webkit-transform: rotate(210deg);\n          transform: rotate(210deg);\n}\n\n.sk-circle9___10Bfe {\n  -webkit-transform: rotate(240deg);\n          transform: rotate(240deg);\n}\n\n.sk-circle10___ZIIud {\n  -webkit-transform: rotate(270deg);\n          transform: rotate(270deg);\n}\n\n.sk-circle11___e79Ig {\n  -webkit-transform: rotate(300deg);\n          transform: rotate(300deg);\n}\n\n.sk-circle12___2KO0A {\n  -webkit-transform: rotate(330deg);\n          transform: rotate(330deg);\n}\n\n.sk-circle2___2kkZ_::before {\n  -webkit-animation-delay: -1.1s;\n          animation-delay: -1.1s;\n}\n\n.sk-circle3___3f5sR::before {\n  -webkit-animation-delay: -1s;\n          animation-delay: -1s;\n}\n\n.sk-circle4___see48::before {\n  -webkit-animation-delay: -0.9s;\n          animation-delay: -0.9s;\n}\n\n.sk-circle5___3GIPF::before {\n  -webkit-animation-delay: -0.8s;\n          animation-delay: -0.8s;\n}\n\n.sk-circle6___3vNMR::before {\n  -webkit-animation-delay: -0.7s;\n          animation-delay: -0.7s;\n}\n\n.sk-circle7___2Ehwq::before {\n  -webkit-animation-delay: -0.6s;\n          animation-delay: -0.6s;\n}\n\n.sk-circle8___2BjnM::before {\n  -webkit-animation-delay: -0.5s;\n          animation-delay: -0.5s;\n}\n\n.sk-circle9___10Bfe::before {\n  -webkit-animation-delay: -0.4s;\n          animation-delay: -0.4s;\n}\n\n.sk-circle10___ZIIud::before {\n  -webkit-animation-delay: -0.3s;\n          animation-delay: -0.3s;\n}\n\n.sk-circle11___e79Ig::before {\n  -webkit-animation-delay: -0.2s;\n          animation-delay: -0.2s;\n}\n\n.sk-circle12___2KO0A::before {\n  -webkit-animation-delay: -0.1s;\n          animation-delay: -0.1s;\n}\n\n@-webkit-keyframes sk-circleFadeDelay___251po {\n  0% {\n    opacity: 0;\n  }\n\n  39% {\n    opacity: 0;\n  }\n\n  40% {\n    opacity: 1;\n  }\n\n  100% {\n    opacity: 0;\n  }\n}\n\n@keyframes sk-circleFadeDelay___251po {\n  0% {\n    opacity: 0;\n  }\n\n  39% {\n    opacity: 0;\n  }\n\n  40% {\n    opacity: 1;\n  }\n\n  100% {\n    opacity: 0;\n  }\n}\n"
     },
-    "./app/components/Toggle/styles.css": {
-      "toggle": "toggle___2vpiT",
-      "_style": ".toggle___2vpiT {\n  line-height: 1em;\n  height: 20px;\n}\n"
-    },
-    "./app/containers/App/styles.css": {
-      "fontLoaded": "fontLoaded___6D0jB",
-      "wrapper": "wrapper___3EkNG",
-      "logoWrapper": "logoWrapper___J-qhm",
-      "logo": "logo___DZWtF",
-      "_style": "/* Global styles */\n\nhtml, body {\n  height: 100%;\n  width: 100%;\n}\n\nbody {\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\nbody.fontLoaded___6D0jB {\n  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n#app {\n  background-color: #FAFAFA;\n  min-height: 100%;\n  min-width: 100%;\n}\n\n.wrapper___3EkNG {\n  max-width: calc(768px + 16px * 2);\n  margin: 0 auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  min-height: 100%;\n  padding: 0 16px;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.logoWrapper___J-qhm {\n  padding: 2em 0;\n}\n\n.logo___DZWtF {\n  width: 100%;\n  margin: 0 auto;\n  display: block;\n}\n"
-    },
-    "./app/containers/FeaturePage/styles.css": {
-      "list": "list___3TCD7",
-      "listItem": "listItem___3910G",
-      "listItemTitle": "listItemTitle___3qrRb",
-      "_style": ".list___3TCD7 {\n  font-family: Georgia, Times, 'Times New Roman', serif;\n  padding-left: 1.75em;\n}\n\n.listItem___3910G {\n  margin: 1em 0;\n}\n\n.listItemTitle___3qrRb {\n  font-weight: bold;\n}\n"
-    },
     "./app/containers/HomePage/styles.css": {
       "textSection": "textSection___btc2A",
       "centered": "centered___NunY2",
@@ -79,16 +80,15 @@
       "atPrefix": "atPrefix___YpA5m",
       "_style": ".textSection___btc2A {\n  margin: 3em auto;\n}\n\n.textSection___btc2A:first-child {\n  margin-top: 0;\n}\n\n.centered___NunY2 {\n  text-align: center;\n}\n\np, label {\n  font-family: Georgia, Times, 'Times New Roman', serif;\n  line-height: 1.5em;\n}\n\n.link___2Hnne {\n  text-decoration: none;\n}\n\n.usernameForm___LJteC {\n  margin-bottom: 1em;\n}\n\n.input___302s8 {\n  outline: none;\n  border-bottom: 1px dotted #999;\n}\n\n.atPrefix___YpA5m {\n  color: black;\n  margin-left: 0.4em;\n}\n"
     },
-    "./app/containers/LocaleToggle/styles.css": {
-      "localeToggle": "localeToggle___2_O5E",
-      "_style": ".localeToggle___2_O5E {\n  padding: 2px;\n}\n"
+    "./app/components/H1/styles.css": {
+      "heading1": "heading1___1w4pT",
+      "_style": ".heading1___1w4pT {\n  font-size: 2em;\n  margin-bottom: 0.25em;\n}\n"
     },
-    "./app/containers/RepoListItem/styles.css": {
-      "linkWrapper": "linkWrapper___3XDOE",
-      "linkRepo": "linkRepo___XQEtZ",
-      "linkIssues": "linkIssues___3gWek",
-      "issueIcon": "issueIcon___3SlID",
-      "_style": ".linkWrapper___3XDOE {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: space-between;\n      -ms-flex-align: space-between;\n          align-items: space-between;\n}\n\n.linkRepo___XQEtZ {\n  height: 100%;\n  color: black;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n}\n\n.linkIssues___3gWek {\n  color: black;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\n.issueIcon___3SlID {\n  fill: #CCC;\n  margin-right: 0.25em;\n}\n"
+    "./app/containers/FeaturePage/styles.css": {
+      "list": "list___3TCD7",
+      "listItem": "listItem___3910G",
+      "listItemTitle": "listItemTitle___3qrRb",
+      "_style": ".list___3TCD7 {\n  font-family: Georgia, Times, 'Times New Roman', serif;\n  padding-left: 1.75em;\n}\n\n.listItem___3910G {\n  margin: 1em 0;\n}\n\n.listItemTitle___3qrRb {\n  font-weight: bold;\n}\n"
     }
   }
 }

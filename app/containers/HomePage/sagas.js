@@ -16,17 +16,20 @@ import { selectUsername } from '../../containers/HomePage/selectors';
  */
 export function* getRepos(username) {
   console.log("making it:", username);
+
+  if(!username){
+    username = yield select(selectUsername());
+  }
   // Select username from store
   const requestURL = `https://api.github.com/users/${username}/repos?type=all&sort=updated`;
 
   // Call our request helper (see 'utils/request')
   const repos = yield call(request, requestURL);
 
-  console.log("I am here: ", repos);
-
   if (!repos.err) {
     yield put(reposLoaded(repos.data, username));
   } else {
+    console.log("I got error: ", repos.err);
     yield put(repoLoadingError(repos.err));
   }
 }
@@ -36,8 +39,9 @@ export function* getRepos(username) {
  * By using `takeLatest` only the result of the latest API call is applied.
  */
 export function* getReposWatcher() {
-  const username = yield select(selectUsername());
-  yield fork(takeLatest, LOAD_REPOS, getRepos, username);
+  const { username } = yield take(LOAD_REPOS);
+  yield fork(getRepos, username);
+  //yield fork(takeLatest, LOAD_REPOS, getRepos, username);
 }
 
 /**

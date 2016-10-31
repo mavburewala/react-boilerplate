@@ -66,7 +66,6 @@ if (window.devToolsExtension) {
 // must be provided for resolving how to retrieve the "route" in the state
 import { selectLocationState } from './containers/App/selectors';
 
-console.log("selectLocationState: ",selectLocationState);
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: selectLocationState(),
 });
