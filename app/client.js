@@ -61,11 +61,13 @@ async function renderClient(messages) {
     whitelist: ['home']
   };
 
-  let initialState =  {};// window.__data; // eslint-disable-line
+  let initialState =  window.__data; // eslint-disable-line
+
+  const hell = { global: initialState.global, language: initialState.language, route: initialState.route };
 
   try {
     const restoredState = await getStoredState(persistConfig);
-    initialState = _.merge({}, initialState, restoredState);
+    initialState = _.merge({}, hell, restoredState);
     console.log("My intial state: ", initialState);
   } catch (error) {
     console.log('error restoring state:', error);

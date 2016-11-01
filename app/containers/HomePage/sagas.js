@@ -14,12 +14,13 @@ import { selectUsername } from '../../containers/HomePage/selectors';
 /**
  * Github repos request/response handler
  */
-export function* getRepos(username) {
+export function* getRepos({login}) {
+  const username = login;
   console.log("making it:", username);
 
-  if(!username){
-    username = yield select(selectUsername());
-  }
+  // if(!username){
+  //   username = yield select(selectUsername());
+  // }
   // Select username from store
   const requestURL = `https://api.github.com/users/${username}/repos?type=all&sort=updated`;
 
@@ -38,10 +39,10 @@ export function* getRepos(username) {
  * By using `takeLatest` only the result of the latest API call is applied.
  */
 export function* getReposWatcher() {
-  const { username } = yield takeLatest(LOAD_REPOS);
-  console.log("Found: ", username);
-  yield fork(getRepos, username);
-  //yield fork(takeLatest, LOAD_REPOS, getRepos, username);
+  // const { username } = yield takeLatest(LOAD_REPOS, getRepos);
+  // console.log("Found: ", username);
+  // yield fork(getRepos, username);
+  yield fork(takeLatest, LOAD_REPOS, getRepos);
 }
 
 /**

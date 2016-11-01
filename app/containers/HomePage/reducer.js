@@ -16,9 +16,26 @@ import {
 import { fromJS } from 'immutable';
 
 // The initial state of the App
-const initialState = fromJS({
+
+
+let initialState =  typeof(window) !== 'undefined' ? window.__data: {}; // eslint-disable-line
+
+const hell = initialState.home? { home: initialState.home }: {
   username: '',
-});
+};
+
+// try {
+//   const restoredState = await getStoredState(persistConfig);
+//   initialState = _.merge({
+//     username: '',
+//   }, hell, restoredState);
+//   console.log("Home intial state: ", initialState);
+// } catch (error) {
+//   console.log('error restoring state:', error);
+// }
+
+console.log("Home initial state is: ", hell);
+initialState = fromJS(hell);
 
 function homeReducer(state = initialState, action) {
   switch (action.type) {

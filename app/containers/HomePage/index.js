@@ -55,7 +55,8 @@ export class HomePage extends React.Component {
    */
   componentDidMount() {
     if (this.props.username && this.props.username.trim().length > 0) {
-      this.props.onSubmitForm(this.props.username);
+      console.log("Hello I am : ", this.props.username);
+      //this.props.onSubmitForm(this.props.username);
     }
   }
   /**
@@ -114,7 +115,11 @@ export class HomePage extends React.Component {
             <H2>
               <FormattedMessage {...messages.trymeHeader} />
             </H2>
-            <form className={styles.usernameForm} onSubmit={this.props.onSubmitForm}>
+            <form
+              className={styles.usernameForm}
+              onSubmit={(evt) => { if (evt !== undefined && evt.preventDefault){evt.preventDefault() }
+                console.log('I am calling');this.props.onSubmitForm(this.props.username)}}
+            >
               <label htmlFor="username">
                 <FormattedMessage {...messages.trymeMessage} />
                 <span className={styles.atPrefix}>
@@ -147,7 +152,7 @@ function preload({login}) {
     ];
   }
   return [
-    [getRepos, login]
+    [getRepos, {login}]
   ];
 }
 

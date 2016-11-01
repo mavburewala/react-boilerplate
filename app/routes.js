@@ -33,7 +33,6 @@ export default function createRoutes(store) {
           System.import('./containers/HomePage/sagas'),
           System.import('./containers/HomePage'),
         ]);
-        console.log('hey babe');
         const renderRoute = loadModule(cb);
 
         importModules.then(([reducer, sagas,  component]) => {
